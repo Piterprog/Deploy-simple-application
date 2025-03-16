@@ -1,0 +1,23 @@
+{
+  "name": "deploy-simple-application",
+  "version": "1.0.0",
+  "description": "Create Node.js application , package it into Docker container , and deploy it to Kubernetes using Helm chart.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Piterprog/Deploy-simple-application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Piterprog/Deploy-simple-application/issues"
+  },
+  "homepage": "https://github.com/Piterprog/Deploy-simple-application#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
