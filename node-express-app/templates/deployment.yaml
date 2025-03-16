@@ -1,11 +1,11 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-Deployment
+  name: {{ .Release.Name }}-deployment
   labels:
-    app : {{ .Release.Name }}-Deployment
+    app : {{ .Release.Name }}-deployment
 spec:
-  replicas: {{ .Values.replication }}
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       project: {{ .Release.Name }}
@@ -19,3 +19,10 @@ spec:
           image: {{ .Values.container.image }}
           ports:
             - containerPort: {{ .Values.container.port }}
+          resources:
+            requests:
+              cpu: "100m"   
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"

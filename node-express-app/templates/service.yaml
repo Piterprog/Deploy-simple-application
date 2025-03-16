@@ -13,4 +13,5 @@ spec:
       protocol  : {{ .Values.ports.protocol }}
       port      : {{ .Values.ports.port }}
       targetPort: {{ .Values.ports.targetPort }}
-  type: {{ .Values.LoadBalancer.type }}
+  type: {{ .Values.service.type }}
+  externalTrafficPolicy: {{ .Values.service.externalTrafficPolicy }}
