@@ -14,4 +14,3 @@ spec:
       port      : {{ .Values.ports.port }}
       targetPort: {{ .Values.ports.targetPort }}
   type: {{ .Values.service.type }}
-  externalTrafficPolicy: {{ .Values.service.externalTrafficPolicy }}
