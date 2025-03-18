@@ -19,7 +19,6 @@ ports:
 
 service:
   type: LoadBalancer
-  externalTrafficPolicy: Local
 
 # HorizontalPodAutoscaler
 hpa:
