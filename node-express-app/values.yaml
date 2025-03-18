@@ -1,8 +1,6 @@
 # Default values for node-express-app.
 
 # Deployment values
-replicaCount: 2
-
 container:
   image: piterbog/node-express-app:1.0.0
   port : 8080
