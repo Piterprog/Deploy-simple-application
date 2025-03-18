@@ -20,9 +20,9 @@ spec:
             - containerPort: {{ .Values.container.port }}
           resources:
             requests:
-              cpu: "100m"        
-              memory: "128Mi"    
+              cpu: {{ .Values.resources.requests.cpu }}        
+              memory: {{ .Values.resources.requests.menory }}    
             limits:
-              cpu: "100m"        
-              memory: "128Mi"   
+              cpu: {{ .Values.resources.limits.cpu }}        
+              memory: {{ .Values.resources.limits.memory }}   
 
