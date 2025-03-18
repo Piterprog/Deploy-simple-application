@@ -27,13 +27,13 @@ Create Node.js application , package it into Docker container , and deploy it to
 
 # Create cluster in GCP cloud
 1. gcloud init
-2. gcloud container clusters create my-cluster \
-  --zone us-central1-a \
-  --num-nodes 3 \
-  --machine-type e2-standard-2 \
-  --enable-autoscaling \
-  --min-nodes 1 \
-  --max-nodes 5 \
-  --enable-autorepair \
-  --enable-ip-alias \
+2. gcloud container clusters create my-cluster \\
+  --zone us-central1-a \\
+  --num-nodes 3 \\
+  --machine-type e2-standard-2 \\
+  --enable-autoscaling \\
+  --min-nodes 1 \\
+  --max-nodes 5 \\
+  --enable-autorepair \\
+  --enable-ip-alias \\
   --release-channel "regular"
