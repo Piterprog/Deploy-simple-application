@@ -1,10 +1,9 @@
-{{- if .Values.hpa.enabled }}
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ .Release.Name }}-hpa
   labels:
-    app: {{ .Release.Name }}
+    app: {{ .Release.Name }}-deployment
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
@@ -19,4 +18,9 @@ spec:
         target:
           type: Utilization
           averageUtilization: {{ .Values.hpa.targetCPUUtilizationPercentage }}
-{{- end }}
+   - type: Resource
+     resource:
+       name: memory
+       target:
+         type: Utilization
+         averageUtilization: {{ .Values.hpa.targetMemoryUtilizationPercentage }}
