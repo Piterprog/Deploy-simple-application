@@ -27,18 +27,18 @@ Create Node.js application , package it into Docker container , and deploy it to
 
 # Create cluster in GCP cloud
 1. gcloud init
-2. gcloud container clusters create storm-shadow-cluster \
-  --zone us-east1 \
-  --num-nodes 1 \
+2. gcloud container clusters create storm-shadow-k8s \
+  --region us-east1 \
+  --node-locations us-east1-c,us-east1-d \
+  --num-nodes 2 \
   --machine-type e2-standard-4 \
   --enable-autoscaling \
-  --min-nodes 1 \
-  --max-nodes 5 \
+  --min-nodes 2 \
+  --max-nodes 8 \
   --enable-autorepair \
-  --enable-ip-alias \
   --release-channel "regular" \
   --network storm-shadow-vpc-net \
   --subnetwork public-subnet-1 \
   --enable-autoupgrade \
-  --disk-size 40
+  --disk-size 20
 
