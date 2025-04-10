@@ -2,7 +2,7 @@
 
 # Deployment values
 container:
-  image: piterbog/node-express-app:1.0.0
+  image: us-central1-docker.pkg.dev/storm-shadow-453608/prod/node-express-app:production
   port : 8080
 resources:
   requests:
