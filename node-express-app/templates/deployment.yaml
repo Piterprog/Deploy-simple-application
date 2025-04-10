@@ -1,9 +1,9 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-deployment
   labels:
-    app : {{ .Release.Name }}-deployment
+    app: {{ .Release.Name }}-deployment
 spec:
   selector:
     matchLabels:
@@ -11,18 +11,19 @@ spec:
   template:
     metadata:
       labels:
-        project: {{ .Release.Name }}  
+        project: {{ .Release.Name }}
     spec:
+      imagePullSecrets:
+        - name: {{ .Values.imagePullSecret }}
       containers:
-        - name : {{ .Release.Name }}-api
+        - name: {{ .Release.Name }}-api
           image: {{ .Values.container.image }}
           ports:
             - containerPort: {{ .Values.container.port }}
           resources:
             requests:
-              cpu: {{ .Values.resources.requests.cpu }}        
-              memory: {{ .Values.resources.requests.memory }}    
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
             limits:
-              cpu: {{ .Values.resources.limits.cpu }}        
-              memory: {{ .Values.resources.limits.memory }}   
-
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}
