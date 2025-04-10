@@ -11,7 +11,8 @@ resources:
   limits:
     cpu: "500m"        
     memory: "512Mi" 
-
+# pull secret 
+imagePullSecret: gcp-artifact-secret
 
 # Service values
 labels:
